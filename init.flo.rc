@@ -277,6 +277,10 @@ on post-fs-data
     write /sys/devices/system/cpu/cpu3/online 1
     write /dev/cpuctl/apps/cpu.notify_on_migrate 1
 
+    # Fast Charge
+    chown system system /sys/kernel/fast_charge/force_fast_charge
+    chmod 0664 /sys/kernel/fast_charge/force_fast_charge
+
 on charger
     # Enable Power modes and set the CPU Freq Sampling rates
     write /sys/module/rpm_resources/enable_low_power/L2_cache 1
